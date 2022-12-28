@@ -1,0 +1,61 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 12-28-2022
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="Location Selector">
+      <div class="slds-p-around_medium custom-modal-width">
+        <lightning-combobox
+          label="Select a location"
+          placeholder="Select a location"
+          options={locationOptions}
+          value={selectedLocation}
+          onchange={handleLocationChange}
+        ></lightning-combobox>
+        <template if:true={showModal}>
+            <section role="dialog" tabindex="-1" aria-modal="true" aria-label="Meaningful description of the modal content" class="slds-modal slds-fade-in-open slds-modal ">
+                <div class="slds-modal__container">
+                <lightning-button-icon
+                    class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                    icon-name="utility:close"
+                    onclick={closeModal}
+                    alternative-text="Close"
+                  ></lightning-button-icon>
+                <span class="slds-assistive-text">Cancel and close</span>
+                <div class="slds-modal__content slds-p-around_medium slds-modal__content_headless" id="modal-content-id-1">
+                    <template if:true={showMalls}>
+                        <lightning-combobox
+                          label="Select a mall"
+                          placeholder="Select a mall"
+                          options={mallOptions}
+                          value={selectedMall}
+                          onchange={handleMallChange}
+                        ></lightning-combobox>
+                      </template>
+                      <template if:true={showHotels}>
+                        <lightning-combobox
+                          label="Select a hotel"
+                          placeholder="Select a hotel"
+                          options={hotelOptions}
+                          value={selectedHotel}
+                          onchange={handleHotelChange}
+                        ></lightning-combobox>
+                      </template>
+                      <div class="slds-modal__content slds-p-around_medium">
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                      </div>
+                </div>
+                </div>
+                </section>
+                <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+        </template>
+      </div>
+    </lightning-card>
+  </template>
+  

@@ -1,0 +1,10 @@
+.custom-modal-width {
+    width: 800px;
+  }
+.slds-modal {
+  color: var(--slds-c-modal-color-border,#3fc04a);
+  background-color: var(--slds-c-backdrop-color-background,rgba(237, 234, 234, 0.6));
+  color: var(--slds-c-modal-content-color-background,rgb(16, 122, 146));
+  box-shadow: var(--slds-c-modal-shadow,10 20px 30px 10 rgba(129, 38, 38, 0.16));
+
+}
