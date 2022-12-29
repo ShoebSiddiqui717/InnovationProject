@@ -2,12 +2,12 @@
   @description       : 
   @author            : ChangeMeIn@UserSettingsUnder.SFDoc
   @group             : 
-  @last modified on  : 12-28-2022
+  @last modified on  : 12-29-2022
   @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
 -->
 <template>
     <lightning-card title="Location Selector">
-      <div class="slds-p-around_medium custom-modal-width">
+      <div class="slds-p-around_medium">
         <lightning-combobox
           label="Select a location"
           placeholder="Select a location"
@@ -16,7 +16,7 @@
           onchange={handleLocationChange}
         ></lightning-combobox>
         <template if:true={showModal}>
-            <section role="dialog" tabindex="-1" aria-modal="true" aria-label="Meaningful description of the modal content" class="slds-modal slds-fade-in-open slds-modal ">
+            <section role="dialog" tabindex="-1" aria-modal="true" aria-label="Meaningful description of the modal content" class="slds-modal slds-fade-in-open slds-modal slds-modal_large">
                 <div class="slds-modal__container">
                 <lightning-button-icon
                     class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
@@ -25,6 +25,9 @@
                     alternative-text="Close"
                   ></lightning-button-icon>
                 <span class="slds-assistive-text">Cancel and close</span>
+                <div class="slds-modal__header">
+                  <h1 id="modal-heading-01" class="slds-modal__title slds-hyphenate">Select Mall</h1>
+               </div>
                 <div class="slds-modal__content slds-p-around_medium slds-modal__content_headless" id="modal-content-id-1">
                     <template if:true={showMalls}>
                         <lightning-combobox
@@ -50,6 +53,17 @@
                         <br>
                         <br>
                       </div>
+                      
+                        <lightning-card title="Malls" icon-name="standard:video">
+                          <div class="container">
+                              <a href="#a" class="item"><img src="https://image3.mouthshut.com/images/imagesp/925930110s.jpg" alt="A" onclick={handlerA}></a>
+                              <a href="#b" class="item"><img src="https://www.thephoenixmills.com/Projects/aac41949-73db-4bad-84a9-e6a9ef7aebb7.jpg" alt="B" onclick={handlerB}></a>
+                              <a href="#c" class="item"><img src="https://sportshub.cbsistatic.com/i/2022/07/25/b87bfa41-24d7-4041-8bbe-e219c41aba52/the-sandman-netflix-poster.jpg?auto=webp&width=1500&height=2222&crop=0.675:1,smart" alt="C" onclick={handlerC}></a>
+                              <a href="#d" class="item"><img src="https://pbs.twimg.com/media/Ec_7SzOUEAAuGit.jpg" alt="D" onclick={handlerD}></a>
+                              <a href="#e" class="item"><img src="https://terrigen-cdn-dev.marvel.com/content/prod/1x/daredevil_s3_vertical-main_rgb.jpg" alt="E" onclick={handlerE}></a>
+                            </div>
+                          </lightning-card>
+                      
                 </div>
                 </div>
                 </section>

@@ -1,6 +1,6 @@
 import { LightningElement, track } from 'lwc';
-
-export default class IDP_homePicklistCompV2 extends LightningElement {
+import { NavigationMixin } from 'lightning/navigation';
+export default class IDP_homePicklistCompV2 extends NavigationMixin(LightningElement) {
   @track selectedLocation;
   @track selectedMall;
   @track selectedHotel;
@@ -40,5 +40,55 @@ export default class IDP_homePicklistCompV2 extends LightningElement {
 
   closeModal() {
     this.showModal = false;
+  }
+
+  handlerA(){
+    console.log('First Image is clicked ');
+    this[NavigationMixin.Navigate]({
+      type : 'standard__webPage',
+      attributes: {
+          url : 'https://www.westendmallpune.com/'
+      }
+  });
+  }
+
+  handlerB(){
+    console.log('Second Image is clicked ');
+    this[NavigationMixin.Navigate]({
+      type : 'standard__webPage',
+      attributes: {
+          url : 'https://www.westendmallpune.com/'
+      }
+  });
+  }
+
+  handlerC(){
+    console.log('Third Image is clicked ');
+    this[NavigationMixin.Navigate]({
+      type : 'standard__webPage',
+      attributes: {
+          url : 'https://www.westendmallpune.com/'
+      }
+  });
+  }
+
+  handlerD(){
+    console.log('Fourth Image is clicked ');
+    this[NavigationMixin.Navigate]({
+      type : 'standard__webPage',
+      attributes: {
+          url : 'https://www.westendmallpune.com/'
+      }
+  });
+  }
+
+  handlerE(){
+    console.log('Fifith Image is clicked ');
+    this[NavigationMixin.Navigate]({
+      type : 'standard__webPage',
+      attributes: {
+          url : 'https://www.westendmallpune.com/'
+      }
+  });
   }
 }
